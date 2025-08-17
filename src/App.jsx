@@ -1,17 +1,12 @@
-
-import './App.css'
-import Root from './Layout/root'
+import "./App.css";
+import Root from "./Layout/root";
 
 function App() {
-  
-
   return (
-   <>
-   <Root>
-    
-   </Root>
-   </>
-  )
+    <>
+      <Root></Root>
+    </>
+  );
 }
 
-export default App
+export default App;
