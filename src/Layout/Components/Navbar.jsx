@@ -6,19 +6,19 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/Home">Home</NavLink>
         
       </li>
       <li>
-        <NavLink to="/">About</NavLink>
+        <NavLink to="/About">About</NavLink>
         
       </li>
       <li>
-        <NavLink to="/">Contect</NavLink>
+        <NavLink to="/Contect">Contect</NavLink>
         
       </li>
       <li>
-        <NavLink to="/">Home</NavLink>
+        {/* <NavLink to="/">Home</NavLink> */}
         
       </li>
     </>
@@ -39,7 +39,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-medium"
           >
            {links}
           </ul>
@@ -47,8 +47,8 @@ const Navbar = () => {
         <a className=" text-xl">daisyUI</a>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+      <div className="navbar-center hidden lg:flex ">
+        <ul className="space-x-5 menu-horizontal px-1 font-medium">
           
           {links}
  

@@ -36,3 +36,11 @@
   --color-error: #EF4444;
   --color-error-content: #FFFFFF;
 }
+
+
+.active{
+  /* background-color:#332b4e ; */
+  /* padding: 8px; */
+  /* border-radius: 0%;  */
+  border-bottom: 1px solid #9B2CFD;
+}
