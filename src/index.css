@@ -1,2 +1,38 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "customdark";
+  default: false;
+  prefersdark: true;
+
+  /* Darker base for gradient effect */
+  --color-base-100: #1F1A3D;   /* darkBg */
+  --color-base-200: #2C224F;   /* altDarkBg */
+  --color-base-300: #3A2B63;   /* extra depth for gradients */
+
+  /* Gradient-like colors */
+  --color-primary: #9B2CFD;    /* gradientStart, deep purple */
+  --color-primary-content: #FFFFFF;
+
+  --color-secondary: #E91E63;  /* gradientEnd, rich pink */
+  --color-secondary-content: #FFFFFF;
+
+  --color-accent: #4F8CF7;     /* highlightBlue, bright contrast */
+  --color-accent-content: #FFFFFF;
+
+  --color-neutral: #2E1F4C;    /* neutral, dark for cards */
+  --color-neutral-content: #FFFFFF;
+
+  --color-info: #3F78F8;       /* info, blue gradient feel */
+  --color-info-content: #FFFFFF;
+
+  --color-success: #22C55E;
+  --color-success-content: #FFFFFF;
+
+  --color-warning: #F59E0B;
+  --color-warning-content: #FFFFFF;
+
+  --color-error: #EF4444;
+  --color-error-content: #FFFFFF;
+}

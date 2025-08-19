@@ -7,12 +7,29 @@ const Navbar = () => {
     <>
       <li>
         <NavLink to="/">Home</NavLink>
+        
+      </li>
+      <li>
+        <NavLink to="/">About</NavLink>
+        
+      </li>
+      <li>
+        <NavLink to="/">Contect</NavLink>
+        
+      </li>
+      <li>
+        <NavLink to="/">Home</NavLink>
+        
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="container mx-auto">
+    <div className=" px-10 mt-8 rounded-full navbar bg-base-100 shadow-sm" 
+    style={{
+  background: "linear-gradient(135deg, var(--color-base-200), var(--color-base-300), var(--color-base-200))"
+}}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,25 +41,17 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li><a>Item 1</a></li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a>Item 3</a></li>
+           {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className=" text-xl">daisyUI</a>
       </div>
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><a>Item 1</a></li>
+          
           {links}
-          <li><a>Item 3</a></li>
+ 
         </ul>
       </div>
 
@@ -50,6 +59,7 @@ const Navbar = () => {
         <a className="btn">Button</a>
         {/* <ThemeToggle /> */}
       </div>
+    </div>
     </div>
   );
 };
