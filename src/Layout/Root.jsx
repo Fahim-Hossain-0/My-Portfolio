@@ -4,6 +4,7 @@ import Banner from './Components/Banner';
 import AboutMe from './Components/AboutMe';
 import Services from './Components/Services';
 import Projects from './Components/Projects';
+import Contact from './Components/Contect';
 
 
 const Root = () => {
@@ -23,6 +24,9 @@ const Root = () => {
             </section>
             <section>
                 <Projects></Projects>
+            </section>
+            <section>
+                <Contact></Contact>
             </section>
         </main>
         </>

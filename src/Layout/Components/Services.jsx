@@ -50,7 +50,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="mt-12 container mx-auto px-6">
+    <div className="container mx-auto px-6">
       {/* Gradient line */}
       <div className="flex items-center justify-center mb-12">
         <hr className="h-[2px] w-full my-12 border-0 rounded-full 

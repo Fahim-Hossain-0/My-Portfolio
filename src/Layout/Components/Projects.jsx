@@ -34,9 +34,14 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="container mx-auto py-12">
+    
+    <div className="container mx-auto py-12 mt-20">
+        <div className="flex items-center justify-center mb-12">
+        <hr className="h-[2px] w-full my-12 border-0 rounded-full 
+          bg-gradient-to-r from-transparent via-[#C084FC] to-transparent opacity-80" />
+      </div>
       <h2 className="text-3xl font-bold text-center mb-6 text-white">My Projects</h2>
-      <p className="text-center text-gray-300 mb-10">
+      <p className="text-center text-gray-400 mb-10">
         Discover the projects that showcase my passion for design and innovation
       </p>
 
@@ -53,7 +58,7 @@ const Projects = () => {
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-gradient-to-b from-[#2C224F] to-[#3A2B63] p-5 rounded-2xl shadow-lg">
+            <div className="bg-gradient-to-b from-[#2C224F] to-[#3A2B63] p-5 rounded-2xl shadow-lg mt-12">
               <img
                 src={project.img}
                 alt={project.title}

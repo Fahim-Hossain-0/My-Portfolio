@@ -1,32 +1,33 @@
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* your custom daisyUI theme */
 @plugin "daisyui/theme" {
   name: "customdark";
   default: false;
   prefersdark: true;
 
-  /* Darker base for gradient effect */
-  --color-base-100: #1F1A3D;   /* darkBg */
-  --color-base-200: #2C224F;   /* altDarkBg */
-  --color-base-300: #3A2B63;   /* extra depth for gradients */
+  --color-base-100: #1F1A3D;
+  --color-base-200: #2C224F;
+  --color-base-300: #3A2B63;
 
-  /* Gradient-like colors */
-  --color-primary: #9B2CFD;    /* gradientStart, deep purple */
+  --color-primary: #9B2CFD;
   --color-primary-content: #FFFFFF;
 
-  --color-secondary: #E91E63;  /* gradientEnd, rich pink */
+  --color-secondary: #E91E63;
   --color-secondary-content: #FFFFFF;
 
-  --color-accent: #4F8CF7;     /* highlightBlue, bright contrast */
+  --color-accent: #4F8CF7;
   --color-accent-content: #FFFFFF;
 
-  --color-neutral: #2E1F4C;    /* neutral, dark for cards */
+  --color-neutral: #2E1F4C;
   --color-neutral-content: #FFFFFF;
 
-  --color-info: #3F78F8;       /* info, blue gradient feel */
+  --color-info: #3F78F8;
   --color-info-content: #FFFFFF;
 
   --color-success: #22C55E;
@@ -39,11 +40,11 @@
   --color-error-content: #FFFFFF;
 }
 
-
 .active{
-  /* background-color:#332b4e ; */
-  /* padding: 8px; */
-  /* border-radius: 0%;  */
   border-bottom: 1px solid #9B2CFD;
 }
 
+html, body {
+   font-family: "Poppins", sans-serif;
+   /* background: black !important; */
+}
