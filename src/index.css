@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -44,3 +46,4 @@
   /* border-radius: 0%;  */
   border-bottom: 1px solid #9B2CFD;
 }
+
