@@ -2,6 +2,7 @@ import React from 'react';
 import bannerImage from '../../assets/banner-img.png';
 import { motion } from "framer-motion"; 
 import { HiDownload } from 'react-icons/hi';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Banner = () => {
     return (
         <div className='container mx-auto mt-22'>
@@ -24,8 +25,11 @@ const Banner = () => {
                             <button className="border border-[#e0e4e8] text-white font-medium rounded-2xl px-5 inline-flex items-center gap-1 py-3 hover:bg-gray-200 hover:text-gray-900 transition">Download CV <HiDownload /></button>
                         {/* <button className=''</button> */}
                     </div>
-                    <div>
+                    <div className='flex items-center gap-4 mt-6'> 
                         {/* icon */}
+                        <a href="https://github.com/Fahim-Hossain-0" target="_blank"><FaGithub className='text-white bg-[#3A2B63] p-2 rounded-full text-4xl' /></a>
+                       <a href="https://www.linkedin.com/in/fahim-hossain0/" target="_blank"> <FaLinkedin className='text-white bg-[#3A2B63] p-2 rounded-full text-4xl' /></a>
+                       <a href="" target="_blank"> <FaFacebook className='text-white bg-[#3A2B63] p-2 rounded-full text-4xl' /></a>
                     </div>
                 </div>
                 <div className=''>

@@ -1,13 +1,24 @@
 import React from "react";
 
+// import jsIcon5 from "../../assets/icons/icons8-javascript-48.png"
+import html from "../../assets/icons/html.png";
+import css from "../../assets/icons/css.png";
+import react from "../../assets/icons/react.png";
+import tailwind from "../../assets/icons/tailwindcss.png"; 
+import node from "../../assets/icons/nodejs.png";
+import express from "../../assets/icons/express.png"; 
+import mongodb from "../../assets/icons/mongodb.png";
+import javaScript from "../../assets/icons/javascript.png";
 const AboutMe = () => {
+
   return (
     <>
+      
       <div className="bg-gradient-to-r from-[#3A2B63] to-[#3A2B63] mt-20 py-12">
-        <div className="container mx-auto flex justify-center items-center bg-gradient-to-r from-[#2C224F] to-[#2C224F] rounded-4xl px-30 py-16">
+        <div className="container mx-auto flex flex-col justify-center items-center bg-gradient-to-r from-[#2C224F] to-[#2C224F] rounded-4xl px-20 py-16">
           <div className=" text-center ">
             <h1 className="text-5xl font-medium">About me</h1>
-            <p className="mt-12">
+            <p className="mt-8 font-semibold text-lg text-gray-300  ">
               Hi, I’m Fahim Hossain, a passionate Full-Stack Web Developer with
               over 1 years of experience building dynamic, user-friendly, and
               scalable web applications. I specialize in crafting responsive
@@ -24,8 +35,23 @@ const AboutMe = () => {
               their ideas to life through the web.
             </p>
           </div>
+
+         
+           <div className="flex flex-wrap justify-center items-center mt-8 gap-4">
+          <img src={html} alt="" className="w-[8%]"/>
+          <img src={css} alt="" className="w-[8%]"/>
+           <img src={tailwind} alt="" className="w-[8%]"/>
+           <img src={javaScript} alt="" className="w-[8%]" />
+          <img src={react} alt="" className="w-[8%]"/>         
+          <img src={node} alt="" className="w-[8%]"/>
+          <img src={express} alt="" className="w-[8%]"/>
+          <img src={mongodb} alt="" className="w-[8%]"/>
+         
+           
+          </div>
+         </div>
         </div>
-      </div>
+      
     </>
   );
 };
