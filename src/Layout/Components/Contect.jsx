@@ -13,16 +13,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-base-100">
-      <div className="w-full max-w-4xl mx-auto grid md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
+    <section className="pt-28 flex items-center justify-center bg-base-100">
+      <div className="w-full max-w-4xl mx-auto grid lg:grid-cols-1 md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
         
         {/* Left Side */}
-        <div className="flex flex-col justify-center text-primary-content">
+        <div className="flex flex-col justify-center text-primary-content text-center">
           <h2 className="text-3xl font-bold mb-4">Contact</h2>
           <p className="text-2xl font-semibold mb-2">
             🌐 Let’s Create Something Amazing Together
           </p>
-          <div className="w-20 h-1 bg-primary rounded-full"></div>
+          {/* <div className="w-20 h-1 bg-primary rounded-full"></div> */}
         </div>
 
         {/* Right Side - Form */}
