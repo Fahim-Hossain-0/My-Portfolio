@@ -13,16 +13,18 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-12 flex items-center justify-center ">
-      <div className="w-full max-w-4xl mx-auto grid lg:grid-cols-1 md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
+    <section className="py-12 px-4 flex items-center justify-center">
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
         
         {/* Left Side */}
-        <div className="flex flex-col justify-center text-primary-content text-center">
+        <div className="flex flex-col justify-center text-primary-content text-center md:text-left">
           <h2 className="text-3xl font-bold mb-4">Contact</h2>
-          <p className="text-2xl font-semibold mb-2">
+          <p className="text-xl font-medium mb-2">
             🌐 Let’s Create Something Amazing Together
           </p>
-          {/* <div className="w-20 h-1 bg-primary rounded-full"></div> */}
+          <p className="text-gray-400">
+            Fill out the form and I’ll get back to you as soon as possible.
+          </p>
         </div>
 
         {/* Right Side - Form */}
@@ -77,4 +79,3 @@ export default function Contact() {
     </section>
   );
 }
-    

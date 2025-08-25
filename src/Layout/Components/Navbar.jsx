@@ -24,7 +24,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="container mx-auto fixed top-0 right-0 buttom left-0 z-50 py-8 "> 
+    <div className="w-[95%] container mx-auto fixed top-0 right-0 buttom left-0 z-50 py-8 "> 
       {/* ✅ fixed navbar */}
       <div
         className="px-10 navbar rounded-full bg-base-100 shadow-sm"
