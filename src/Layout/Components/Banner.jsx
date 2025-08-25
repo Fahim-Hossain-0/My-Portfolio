@@ -5,7 +5,7 @@ import { HiDownload } from 'react-icons/hi';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 const Banner = () => {
     return (
-        <div className='container mx-auto mt-22'>
+        <div className='container mx-auto'>
            <div className='flex justify-between items-center gap-16'>
                 <div className=''>
                     {/* <motion.div animate={{ x: [0, 100, 0] }} /> */}
@@ -20,9 +20,9 @@ const Banner = () => {
                     <h1 className="text-7xl font-bold mt-4 mb-8">Web Developer</h1>
                     <p className='text-lg opacity-[0.8]'>I’m a passionate web developer with expertise in HTML, CSS, JavaScript, and React. I love building responsive, user-friendly applications that solve real problems. <br /> Constantly exploring new technologies, I enjoy turning ideas into functional designs. <br /> My focus is on clean code, performance, and creating impactful digital experiences.</p>
                     <div className='flex items-center gap-3 mt-6'>
-                            <button className="bg-[#e0e4e8] text-black font-medium rounded-2xl px-4 py-3 hover:bg-gray-300 hover:text-gray-900 transition">My projects</button>
+                            <a href='#projects' className="bg-[#e0e4e8] text-black font-medium rounded-2xl px-4 py-3 hover:bg-gray-300 hover:text-gray-900 transition">My projects</a>
 
-                            <button className="border border-[#e0e4e8] text-white font-medium rounded-2xl px-5 inline-flex items-center gap-1 py-3 hover:bg-gray-200 hover:text-gray-900 transition">Download CV <HiDownload /></button>
+                            <a className="border border-[#e0e4e8] text-white font-medium rounded-2xl px-5 inline-flex items-center gap-1 py-3 hover:bg-gray-200 hover:text-gray-900 transition cursor-pointer">Download CV <HiDownload /></a>
                         {/* <button className=''</button> */}
                     </div>
                     <div className='flex items-center gap-4 mt-6'> 

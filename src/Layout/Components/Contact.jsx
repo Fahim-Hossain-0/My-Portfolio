@@ -13,7 +13,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="pt-28 flex items-center justify-center bg-base-100">
+    <section className="py-12 flex items-center justify-center ">
       <div className="w-full max-w-4xl mx-auto grid lg:grid-cols-1 md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
         
         {/* Left Side */}

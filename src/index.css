@@ -40,11 +40,17 @@
   --color-error-content: #FFFFFF;
 }
 
-.active{
-  border-bottom: 1px solid #9B2CFD;
-}
+/* .active{
+  /* border-bottom: 1px solid #9B2CFD; */
+/* }  */
 
 html, body {
    font-family: "Poppins", sans-serif;
    /* background: black !important; */
+}
+
+.navlink:hover{
+   border-bottom: 1px solid #9B2CFD;
+    transition: all 0.3s ease-in-out;
+  /* background: #000; */
 }

@@ -1,0 +1,28 @@
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;  /* push behind content */
+  pointer-events: none;
+}
+
+.bg-animation img {
+  position: absolute;  /* ✅ float anywhere instead of stacking */
+  width: 60px;
+  height: 60px;
+  opacity: 0.2;  /* softer background look */
+  animation: floatAnim 20s linear infinite;
+}
+
+/* simple floating animation */
+@keyframes floatAnim {
+  0% {
+    transform: translateY(100vh) translateX(0);
+  }
+  50% {
+    transform: translateY(50vh) translateX(50px);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-50px);
+  }
+}
