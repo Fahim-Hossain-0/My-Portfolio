@@ -1,15 +1,23 @@
 import React from "react";
 import "./BackgroundAnimation.css";
-
+import html from "../../assets/icons/html.png";
+import css from "../../assets/icons/css.png";
+import react from "../../assets/icons/react.png";
+import tailwind from "../../assets/icons/tailwindcss.png"; 
+import node from "../../assets/icons/nodejs.png";
+import express from "../../assets/icons/express.png"; 
+import mongodb from "../../assets/icons/mongodb.png";
+import javaScript from "../../assets/icons/javascript.png";
 // your logos
 const IMAGE_SOURCES = [
-  "/src/assets/icons/html.png",
+    html,css,javaScript,react,node,mongodb,tailwind,express
+//   "/src/assets/icons/html.png",
 //   "/src/assets/icons/css.png",
-  "/src/assets/icons/javascript.png",
-  "/src/assets/icons/react.png",
-  "/src/assets/icons/nodejs.png",
-  "/src/assets/icons/mongodb.png",
-  "/src/assets/icons/tailwindcss.png",
+//   "/src/assets/icons/javascript.png",
+//   "/src/assets/icons/react.png",
+//   "/src/assets/icons/nodejs.png",
+//   "/src/assets/icons/mongodb.png",
+//   "/src/assets/icons/tailwindcss.png",
 //   "/src/assets/icons/bootstrap.png",
 //   "/assets",
 //   "/assets/",

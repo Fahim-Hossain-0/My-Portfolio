@@ -4,31 +4,36 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
 
+import { Navigation, Pagination } from "swiper/modules";
+import project1 from "/src/assets/project-img/Food-Hub-08-24-2025_02_55_PM.jpg"
+
+import project2 from "/src/assets/project-img/Blood-Hub-08-24-2025_02_53_PM.jpg"
+
+import project3 from "/src/assets/project-img/Home-08-24-2025_03_00_PM.jpg"
 // Example projects (replace with yours)
 const projects = [
   {
     title: "Food Hub",
     desc: "A food item website where users can explore a variety of delicious recipes, view detailed information about each dish, and manage their favorite recipes with ease.",
     tag: "WEB",
-    img: "/src/assets/project-img/Food-Hub-08-24-2025_02_55_PM.jpg",
+    img: project1,
     github: "https://github.com/Fahim-Hossain-0/Food-Hub-clint-site",
     live: "https://food-hub-6fa90.web.app/",
   },
   {
     title: "Blood Donetion Hub",
     desc: "A comprehensive blood donation platform that connects donors with recipients, facilitating easy registration, search, and management of blood donation requests.",
-    tag: "App Design",
-    img: "/src/assets/project-img/Blood-Hub-08-24-2025_02_53_PM.jpg",
+    tag: "App ",
+    img: project2,
     github: "https://github.com/Fahim-Hossain-0/Blood-donetion-hub",
     live: "https://blood-donation-bcbd2.web.app/",
   },
   {
     title: "Local Event",
     desc: "A dynamic event management platform that allows users to create, discover, and manage local events with ease. Features include event creation, RSVP management, and real-time updates.",
-    tag: "Web Design",
-    img: "/src/assets/project-img/Home-08-24-2025_03_00_PM.jpg",
+    tag: "Web ",
+    img: project3,
     github: "https://github.com/Fahim-Hossain-0/local-event",
     live: "https://local-event-473db.web.app/",
   },

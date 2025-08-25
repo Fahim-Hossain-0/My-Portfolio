@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaEnvelope, FaPhone, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -10,21 +11,44 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted:", form);
+    // Here you can integrate email API or backend submission
   };
 
   return (
     <section className="py-12 px-4 flex items-center justify-center">
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-8 rounded-2xl shadow-xl bg-base-200">
         
-        {/* Left Side */}
-        <div className="flex flex-col justify-center text-primary-content text-center md:text-left">
-          <h2 className="text-3xl font-bold mb-4">Contact</h2>
-          <p className="text-xl font-medium mb-2">
+        {/* Left Side - Contact Info */}
+        <div className="flex flex-col justify-center text-primary-content text-center md:text-left space-y-4">
+          <h2 className="text-3xl font-bold mb-2">Contact</h2>
+          <p className="text-xl font-medium">
             🌐 Let’s Create Something Amazing Together
           </p>
-          <p className="text-gray-400">
-            Fill out the form and I’ll get back to you as soon as possible.
+          <p className="text-gray-400 mb-6">
+            Fill out the form or reach me directly via the contact details below.
           </p>
+
+          {/* Contact Information */}
+          <div className="space-y-3 text-left">
+            <p className="flex items-center gap-2 text-lg">
+              <FaEnvelope className="text-primary" />{" "}
+              <a href="mailto:fahim@example.com" className="hover:underline">
+                fahimhossain@gmail.com
+              </a>
+            </p>
+            <p className="flex items-center gap-2 text-lg">
+              <FaPhone className="text-primary" />{" "}
+              <a href="tel:+8801234567890" className="hover:underline">
+                +8801886651908
+              </a>
+            </p>
+            <p className="flex items-center gap-2 text-lg">
+              <FaWhatsapp className="text-green-500" />{" "}
+              <a href="https://wa.me/8801234567890" target="_blank" rel="noopener noreferrer" className="hover:underline">
+               +8801886651908
+              </a>
+            </p>
+          </div>
         </div>
 
         {/* Right Side - Form */}
@@ -61,7 +85,7 @@ export default function Contact() {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Enter message"
+              placeholder="Enter your message"
               rows="4"
               className="textarea textarea-bordered w-full bg-base-300 text-white"
               required
