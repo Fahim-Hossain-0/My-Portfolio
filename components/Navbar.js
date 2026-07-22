@@ -36,8 +36,8 @@ export default function Navbar() {
           scrolled ? "card-surface backdrop-blur-md" : "bg-surface/60 backdrop-blur-md"
         }`}
       >
-        <Link href="/" className="flex items-center gap-2 font-semibold text-ink">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+        <Link href="/" className="flex items-center gap-2 text-2xl font-semibold text-ink">
+          {/* <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> */}
           {siteConfig.name}
         </Link>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Clock, Rocket, Code2, Heart } from "lucide-react";
 import { stats } from "@/lib/data";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -71,21 +71,20 @@ export default function Hero() {
           variants={item}
           className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4"
         >
-          <div className="card-surface col-span-2 rounded-2xl p-5 text-left transition-all duration-200 hover:border-accent/30 hover:shadow-[0_4px_20px_rgba(109,93,246,0.08)] sm:col-span-1">
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/40 font-serif text-sm font-semibold text-accent">
-              FH
-            </div>
-            <p className="font-semibold text-ink">{siteConfig.name}</p>
-            <p className="mt-1 flex items-center gap-1.5 text-xs text-muted">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-green" />
-              Available for work
-            </p>
-          </div>
+          
 
-          {stats.map((stat) => (
-            <div key={stat.label} className="card-surface rounded-2xl p-5 text-left transition-all duration-200 hover:border-accent/30 hover:shadow-[0_4px_20px_rgba(109,93,246,0.08)]">
-              <p className="text-2xl font-bold text-ink">{stat.value}</p>
-              <p className="mt-1 text-xs text-muted">{stat.label}</p>
+          {[
+            { icon: Clock, value: stats[0].value, label: stats[0].label, bg: "bg-accent-blue/10", color: "text-accent-blue" },
+            { icon: Rocket, value: stats[1].value, label: stats[1].label, bg: "bg-accent-green/10", color: "text-accent-green" },
+            { icon: Code2, value: stats[2].value, label: stats[2].label, bg: "bg-accent/10", color: "text-accent" },
+            { icon: Heart, value: stats[3].value, label: stats[3].label, bg: "bg-accent-amber/10", color: "text-accent-amber" },
+          ].map((s) => (
+            <div key={s.label} className="card-surface group rounded-2xl p-4 text-left transition-all duration-200 hover:border-accent/30 hover:shadow-[0_4px_20px_rgba(109,93,246,0.08)]">
+              <div className={`mb-3 flex h-8 w-8 items-center justify-center rounded-lg ${s.bg} ${s.color}`}>
+                <s.icon size={15} />
+              </div>
+              <p className="text-xl font-bold text-ink">{s.value}</p>
+              <p className="mt-0.5 text-xs text-muted">{s.label}</p>
             </div>
           ))}
         </motion.div>

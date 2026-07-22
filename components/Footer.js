@@ -59,9 +59,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Built with Next.js &amp; Tailwind CSS</p>
+        <div className="mt-12 gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:justify-between">
+          <p className="text-center">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>

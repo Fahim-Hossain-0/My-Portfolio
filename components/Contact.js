@@ -4,10 +4,11 @@ import Reveal from "@/components/Reveal";
 import { siteConfig } from "@/lib/siteConfig";
 
 const socials = [
-  { icon: Github, label: "GitHub", sub: "@fahimhossain", href: siteConfig.links.github },
+  { icon: Github, label: "GitHub", sub: "@Fahim-Hossain-0", href: siteConfig.links.github },
   { icon: Linkedin, label: "LinkedIn", sub: siteConfig.name, href: siteConfig.links.linkedin },
   { icon: Facebook, label: "Facebook", sub: siteConfig.name, href: siteConfig.links.facebook },
   { icon: Mail, label: "Email", sub: siteConfig.email, href: `mailto:${siteConfig.email}` },
+  { icon: MessageCircle, label: "WhatsApp", sub: siteConfig.phone, href: siteConfig.links.whatsapp },
 ];
 
 export default function Contact() {
