@@ -1,8 +1,15 @@
 import { Suspense } from "react";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { siteConfig } from "@/lib/siteConfig";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -86,7 +93,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
-      <body className="bg-bg text-ink antialiased">
+      <body className={`${inter.variable} bg-bg text-ink antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-bg"

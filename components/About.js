@@ -24,9 +24,15 @@ export default function About() {
 
       <Reveal delay={0.15} className="mt-10 grid grid-cols-2 gap-6 border-y border-border py-8 sm:grid-cols-4">
         {quickFacts.map((fact) => (
-          <div key={fact.label}>
-            <p className="text-lg font-semibold text-ink">{fact.value}</p>
+          <div key={fact.label} className="group relative">
+            <p className="text-lg font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
+              {fact.value}
+            </p>
             <p className="mt-1 text-xs text-muted">{fact.label}</p>
+            <span
+              aria-hidden="true"
+              className="absolute -bottom-[1px] left-0 h-px w-full origin-left scale-x-0 bg-gradient-to-r from-accent to-accent-blue transition-transform duration-300 ease-out group-hover:scale-x-100"
+            />
           </div>
         ))}
       </Reveal>
@@ -46,7 +52,7 @@ export default function About() {
             return (
               <span
                 key={skill}
-                className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors hover:brightness-90 dark:border-border dark:bg-transparent dark:text-ink ${colors[i % colors.length]}`}
+                className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-accent-sm dark:border-border dark:bg-transparent dark:text-ink ${colors[i % colors.length]}`}
               >
                 {skill}
               </span>
@@ -55,11 +61,15 @@ export default function About() {
         </div>
       </Reveal>
 
-      <div className="mt-14 grid gap-8 sm:grid-cols-3">
+      <div className="relative mt-14 grid gap-8 sm:grid-cols-3">
+        <span
+          aria-hidden="true"
+          className="absolute left-0 right-0 top-[11px] hidden h-px bg-gradient-to-r from-accent/30 via-accent-blue/20 to-transparent sm:block"
+        />
         {milestones.map((m, i) => (
-          <Reveal key={m.year} delay={0.1 * i} className="relative pl-6">
+          <Reveal key={m.year} delay={0.1 * i} className="group relative pl-6">
             <span
-              className={`absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full ${
+              className={`absolute left-0 top-1.5 h-2.5 w-2.5 rounded-full transition-transform duration-300 group-hover:scale-125 ${
                 m.current ? "milestone-dot-current" : "milestone-dot-past"
               }`}
               aria-hidden="true"
@@ -67,7 +77,9 @@ export default function About() {
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
               {m.year}
             </p>
-            <p className="mt-2 font-semibold text-ink">{m.title}</p>
+            <p className="mt-2 font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
+              {m.title}
+            </p>
             <p className="mt-1.5 text-sm text-muted">{m.description}</p>
           </Reveal>
         ))}

@@ -16,7 +16,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="mt-8 rounded-full bg-gradient-to-r from-accent to-accent-blue px-6 py-3 text-sm font-semibold text-white"
+          className="btn-shine mt-8 rounded-full bg-gradient-to-r from-accent to-accent-blue px-6 py-3 text-sm font-semibold text-white shadow-accent-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
         >
           Back to home
         </Link>

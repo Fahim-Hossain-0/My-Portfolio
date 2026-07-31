@@ -27,8 +27,10 @@ export default function Footer() {
       <div className="mx-auto max-w-content px-4 py-14">
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="max-w-xs">
-            <Link href="/" className="flex items-center gap-2 font-semibold text-ink">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+            <Link href="/" className="group flex items-center gap-2.5 font-semibold text-ink">
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-accent-blue text-[10px] font-bold text-white shadow-accent-sm transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105">
+                FH
+              </span>
               {siteConfig.name}
             </Link>
             <p className="mt-3 text-sm text-muted">
@@ -47,7 +49,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-sm text-muted transition-colors hover:text-ink"
+                        className="link-underline text-sm text-muted transition-colors duration-300 hover:text-ink"
                       >
                         {link.label}
                       </a>
@@ -59,9 +61,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:justify-between">
-          <p className="text-center">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          
+        <div className="mt-12 border-t border-border pt-6 text-xs text-muted">
+          <p className="text-center">
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

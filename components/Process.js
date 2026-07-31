@@ -29,19 +29,23 @@ export default function Process() {
           return (
             <Fragment key={step.number}>
               <Reveal delay={i * 0.08} className="h-full">
-                <div className="card-surface-process h-full rounded-2xl p-6">
+                <div className="card-surface-process group h-full rounded-2xl p-6">
                   <span className={`text-xs font-semibold ${c.text}`}>{step.number}</span>
-                  <div className={`mt-3 flex h-9 w-9 items-center justify-center rounded-lg border ${c.bg} ${c.border}`}>
+                  <div
+                    className={`mt-3 flex h-9 w-9 items-center justify-center rounded-lg border transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${c.bg} ${c.border}`}
+                  >
                     <Icon size={16} className={c.text} />
                   </div>
-                  <h3 className="mt-4 font-semibold text-ink">{step.title}</h3>
+                  <h3 className="mt-4 font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
+                    {step.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted">{step.description}</p>
                 </div>
               </Reveal>
               {i < process.length - 1 && (
                 <ChevronRight
                   size={16}
-                  className="mx-auto hidden shrink-0 text-muted/40 lg:block"
+                  className="mx-auto hidden shrink-0 text-muted/40 transition-colors duration-300 hover:text-accent lg:block"
                   aria-hidden="true"
                 />
               )}

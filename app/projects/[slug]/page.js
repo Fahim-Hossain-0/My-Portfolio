@@ -65,9 +65,9 @@ export default function ProjectPage({ params }) {
         <Reveal>
           <Link
             href="/#work"
-            className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
+            className="group inline-flex items-center gap-2 text-sm text-muted transition-colors duration-300 hover:text-ink"
           >
-            <ArrowLeft size={15} />
+            <ArrowLeft size={15} className="transition-transform duration-300 group-hover:-translate-x-1" />
             Back to work
           </Link>
         </Reveal>
@@ -96,7 +96,7 @@ export default function ProjectPage({ params }) {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-blue px-5 py-2.5 text-sm font-semibold text-white"
+                className="btn-shine flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-blue px-5 py-2.5 text-sm font-semibold text-white shadow-accent-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
               >
                 View live
                 <ArrowUpRight size={15} />
@@ -105,9 +105,9 @@ export default function ProjectPage({ params }) {
             {project.links.code && (
               <a
                 href={project.links.code}
-                className="flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2"
+                className="group flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface-2 hover:shadow-soft"
               >
-                <Github size={15} />
+                <Github size={15} className="transition-transform duration-300 group-hover:scale-110" />
                 View code
               </a>
             )}
@@ -115,8 +115,16 @@ export default function ProjectPage({ params }) {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 flex h-64 items-center justify-center rounded-2xl border border-border bg-surface-2 text-lg font-medium text-muted sm:h-96">
-            {project.title} preview
+          <div className="relative mt-12 flex h-64 items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface-2 sm:h-96">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent-blue/10"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%]"
+            />
+            <p className="relative text-lg font-medium text-muted">{project.title} preview</p>
           </div>
         </Reveal>
 
@@ -150,7 +158,7 @@ export default function ProjectPage({ params }) {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="h-fit space-y-6 rounded-2xl border border-border bg-surface p-6">
+          <Reveal delay={0.1} className="h-fit space-y-6 rounded-2xl border border-border bg-surface p-6 shadow-soft">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted">Year</p>
               <p className="mt-1 text-sm text-ink">{project.year}</p>
@@ -177,10 +185,15 @@ export default function ProjectPage({ params }) {
           </p>
           <Link
             href={`/projects/${next.slug}`}
-            className="mt-3 flex items-center justify-between gap-4 rounded-2xl border border-border p-6 transition-colors hover:bg-surface-2"
+            className="group mt-3 flex items-center justify-between gap-4 rounded-2xl border border-border p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-surface-2 hover:shadow-accent-sm"
           >
-            <span className="text-xl font-semibold text-ink">{next.title}</span>
-            <ArrowUpRight size={18} className="text-muted" />
+            <span className="text-xl font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
+              {next.title}
+            </span>
+            <ArrowUpRight
+              size={18}
+              className="text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+            />
           </Link>
         </Reveal>
       </main>

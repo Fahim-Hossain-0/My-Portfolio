@@ -22,16 +22,20 @@ export default function Services() {
             return (
               <Reveal key={service.title} delay={i * 0.08}>
                 <div
-                  className={`h-full rounded-2xl border p-6 ${
+                  className={`group h-full rounded-2xl border p-6 transition-all duration-300 ${
                     service.highlighted
-                      ? "border-accent-amber bg-surface shadow-[0_0_60px_-15px_rgba(245,165,36,0.35)]"
-                      : "card-surface"
+                      ? "border-accent-amber bg-surface shadow-[0_0_60px_-15px_rgba(245,165,36,0.4)] hover:shadow-[0_0_80px_-12px_rgba(245,165,36,0.5)]"
+                      : "card-surface hover:border-accent/30"
                   }`}
                 >
-                  <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-surface-2 ${iconColors[service.icon]}`}>
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl bg-surface-2 transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110 ${iconColors[service.icon]}`}
+                  >
                     <Icon size={18} />
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-bold text-ink">{service.title}</h3>
+                  <h3 className="mt-4 font-serif text-lg font-bold text-ink transition-colors duration-300 group-hover:text-accent">
+                    {service.title}
+                  </h3>
                   <p className="mt-2 text-sm text-muted">{service.description}</p>
                 </div>
               </Reveal>

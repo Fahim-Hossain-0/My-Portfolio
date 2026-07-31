@@ -33,16 +33,16 @@ export default function Contact() {
               <div className="mt-6 text-sm">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-2.5 border-b border-border py-3 text-muted transition-colors hover:text-ink"
+                  className="group flex items-center gap-2.5 border-b border-border py-3 text-muted transition-colors duration-300 hover:text-ink"
                 >
-                  <Mail size={16} className="text-accent-blue" />
+                  <Mail size={16} className="text-accent-blue transition-transform duration-300 group-hover:scale-110" />
                   {siteConfig.email}
                 </a>
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2.5 border-b border-border py-3 text-muted transition-colors hover:text-ink"
+                  className="group flex items-center gap-2.5 border-b border-border py-3 text-muted transition-colors duration-300 hover:text-ink"
                 >
-                  <Phone size={16} className="text-accent-blue" />
+                  <Phone size={16} className="text-accent-blue transition-transform duration-300 group-hover:scale-110" />
                   {siteConfig.phone}
                 </a>
                 <p className="flex items-center gap-2.5 py-3 text-muted">
@@ -59,12 +59,14 @@ export default function Contact() {
                   href={s.href}
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group rounded-xl border border-border bg-surface-2 p-4 transition-all duration-200 hover:border-accent hover:shadow-[0_4px_16px_rgba(109,93,246,0.08)] hover:-translate-y-1"
+                  className="group rounded-xl border border-border bg-surface-2 p-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent hover:shadow-[0_16px_32px_-16px_rgba(109,93,246,0.4)]"
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-accent-blue transition-colors group-hover:text-accent group-hover:border-accent/40">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-accent-blue transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:border-accent/40 group-hover:text-accent">
                     <s.icon size={15} />
                   </span>
-                  <p className="mt-3 text-sm font-semibold text-ink">{s.label}</p>
+                  <p className="mt-3 text-sm font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
+                    {s.label}
+                  </p>
                   <p className="truncate text-xs text-muted">{s.sub}</p>
                 </a>
               ))}
