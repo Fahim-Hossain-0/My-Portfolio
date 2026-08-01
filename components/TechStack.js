@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { techLayers } from "@/lib/data";
 
 const colorMap = {
-  blue: { dot: "bg-accent-blue", text: "text-accent-blue" },
-  purple: { dot: "bg-accent", text: "text-accent" },
-  green: { dot: "bg-accent-green", text: "text-accent-green" },
-  amber: { dot: "bg-accent-amber", text: "text-accent-amber" },
+  blue: { dot: "bg-accent-blue", text: "text-accent-blue", border: "border-accent-blue/30" },
+  purple: { dot: "bg-accent", text: "text-accent", border: "border-accent/30" },
+  green: { dot: "bg-accent-cyan", text: "text-accent-cyan", border: "border-accent-cyan/30" },
+  amber: { dot: "bg-accent-violet", text: "text-accent-violet", border: "border-accent-violet/30" },
 };
 
 const squareVariants = {
@@ -30,7 +31,7 @@ function LayerIndicator({ depth, color }) {
         <motion.span
           key={i}
           variants={squareVariants}
-          className={`h-3.5 w-3.5 rounded-[4px] ${
+          className={`h-3.5 w-3.5 rounded-[4px] transition-shadow duration-300 ${
             i < depth ? colorMap[color].dot : "bg-surface-2"
           }`}
           aria-hidden="true"
@@ -49,36 +50,38 @@ export default function TechStack() {
         description="Four layers, front to back — the same shape as the products I build."
       />
 
-      <div className="mt-12 divide-y divide-border border-t border-border">
+      <div className="mt-12 space-y-4">
         {techLayers.map((layer, i) => (
-          <Reveal key={layer.name} delay={i * 0.06} className="py-8 first:pt-0">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8">
-              <LayerIndicator depth={i + 1} color={layer.color} />
+          <Reveal key={layer.name} delay={i * 0.06}>
+            <SpotlightCard className="p-6 transition-all duration-300 hover:border-accent/30" maxTilt={3}>
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-8">
+                <LayerIndicator depth={i + 1} color={layer.color} />
 
-              <div className="w-full sm:w-56 sm:shrink-0">
-                <p className={`text-xs font-semibold uppercase tracking-wider ${colorMap[layer.color].text}`}>
-                  Layer {layer.index}
-                </p>
-                <h3 className="mt-1.5 text-lg font-semibold text-ink">{layer.name}</h3>
-                <p className="mt-1 text-sm text-muted">{layer.description}</p>
-              </div>
+                <div className="w-full sm:w-56 sm:shrink-0">
+                  <p className={`text-xs font-semibold uppercase tracking-wider ${colorMap[layer.color].text}`}>
+                    Layer {layer.index}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold text-ink">{layer.name}</h3>
+                  <p className="mt-0.5 text-sm text-muted">{layer.description}</p>
+                </div>
 
-              <div className="flex flex-1 flex-wrap gap-2.5">
-                {layer.items.map((tool) => (
-                  <span
-                    key={tool.name}
-                    className="group flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-sm text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-accent-sm"
-                  >
+                <div className="flex flex-1 flex-wrap gap-2.5">
+                  {layer.items.map((tool) => (
                     <span
-                      className={`flex h-5 w-5 items-center justify-center rounded-[5px] bg-surface-2 text-[10px] font-semibold transition-transform duration-300 group-hover:scale-110 ${colorMap[layer.color].text}`}
+                      key={tool.name}
+                      className="group flex items-center gap-2 rounded-xl border border-border bg-surface-2/60 px-3.5 py-2 text-sm font-medium text-ink transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface hover:shadow-accent-sm"
                     >
-                      {tool.tag}
+                      <span
+                        className={`flex h-5.5 w-5.5 items-center justify-center rounded-lg bg-surface text-[10px] font-bold shadow-xs transition-transform duration-300 group-hover:scale-110 ${colorMap[layer.color].text}`}
+                      >
+                        {tool.tag}
+                      </span>
+                      {tool.name}
                     </span>
-                    {tool.name}
-                  </span>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </SpotlightCard>
           </Reveal>
         ))}
       </div>

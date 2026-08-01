@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font-sans: var(--font-sora), -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  /* Light theme tokens */
-  --bg: #fafaf8;
+  /* Light theme tokens — slate/gray neutrals */
+  --bg: #f8fafc;
   --surface: #ffffff;
-  --surface-2: #f3f1ee;
-  --border: rgba(10, 10, 15, 0.08);
-  --border-strong: rgba(10, 10, 15, 0.2);
-  --ink: #17171b;
-  --muted: #626a76;
+  --surface-2: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.2);
+  --ink: #0f172a;
+  --muted: #64748b;
 }
 
 .dark {
-  /* Dark theme tokens */
-  --bg: #09090b;
-  --surface: #111114;
-  --surface-2: #18181d;
+  /* Dark theme tokens — deep slate */
+  --bg: #020617;
+  --surface: #0f172a;
+  --surface-2: #1e293b;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.2);
-  --ink: #f4f4f6;
-  --muted: #9298a6;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
 }
 
 * {
@@ -62,7 +62,7 @@ body {
 }
 
 ::selection {
-  background: #6d5df6;
+  background: #4f46e5;
   color: white;
 }
 
@@ -75,7 +75,7 @@ section[id] {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #6d5df6;
+  outline: 2px solid #4f46e5;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -96,9 +96,9 @@ button:focus-visible,
 .text-gradient {
   background: linear-gradient(
     120deg,
-    #6d5df6 0%,
-    #4c6fff 45%,
-    #3dd68c 90%
+    #4f46e5 0%,
+    #3b82f6 45%,
+    #06b6d4 90%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -120,7 +120,7 @@ button:focus-visible,
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6d5df6;
+  color: #4f46e5;
 }
 
 /* --- Cards --- */
@@ -143,15 +143,15 @@ button:focus-visible,
 }
 
 .card-surface:hover {
-  border-color: rgba(109, 93, 246, 0.22);
-  box-shadow: 0 12px 32px -8px rgba(109, 93, 246, 0.12),
+  border-color: rgba(79, 70, 229, 0.22);
+  box-shadow: 0 12px 32px -8px rgba(79, 70, 229, 0.1),
     0 1px 0 0 rgba(255, 255, 255, 0.03) inset;
   transform: translateY(-2px);
 }
 
 .card-surface-process:hover {
-  border-color: rgba(109, 93, 246, 0.28);
-  box-shadow: 0 16px 40px -12px rgba(109, 93, 246, 0.18);
+  border-color: rgba(79, 70, 229, 0.28);
+  box-shadow: 0 16px 40px -12px rgba(79, 70, 229, 0.16);
   transform: translateY(-4px);
 }
 
@@ -164,46 +164,46 @@ button:focus-visible,
   border-radius: 9999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
-  border: 1px solid rgba(10, 10, 15, 0.09);
+  border: 1px solid rgba(15, 23, 42, 0.09);
   background-color: #ffffff;
-  color: #0a0a0c;
+  color: #0f172a;
   transition: background-color 0.2s ease, border-color 0.2s ease,
     transform 0.2s ease;
 }
 
 .tag-pill:hover {
-  border-color: rgba(109, 93, 246, 0.3);
-  background-color: rgba(109, 93, 246, 0.04);
+  border-color: rgba(79, 70, 229, 0.3);
+  background-color: rgba(79, 70, 229, 0.04);
   transform: translateY(-1px);
 }
 
 .dark .tag-pill {
   background-color: transparent;
   border-color: rgba(255, 255, 255, 0.08);
-  color: #f4f4f6;
+  color: #f8fafc;
 }
 
 .dark .tag-pill:hover {
-  border-color: rgba(109, 93, 246, 0.4);
-  background-color: rgba(109, 93, 246, 0.1);
+  border-color: rgba(79, 70, 229, 0.45);
+  background-color: rgba(79, 70, 229, 0.12);
 }
 
 /* --- Section backgrounds (light mode) --- */
 
 .section-warm {
-  background-color: #fff8f3;
+  background-color: #ffffff;
 }
 
 .section-cool {
-  background-color: #f4f8ff;
+  background-color: #f1f5f9;
 }
 
 .section-soft {
-  background-color: #f4fefa;
+  background-color: #f8fafc;
 }
 
 .section-muted {
-  background-color: #f7f4ff;
+  background-color: #f1f5f9;
 }
 
 .dark .section-warm,
@@ -218,38 +218,38 @@ button:focus-visible,
 .fact-value {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #17171b;
+  color: #0f172a;
 }
 
 .dark .fact-value {
-  color: #f4f4f6;
+  color: #f8fafc;
 }
 
 .fact-label {
   margin-top: 0.25rem;
   font-size: 0.75rem;
-  color: #626a76;
+  color: #64748b;
 }
 
 .dark .fact-label {
-  color: #9298a6;
+  color: #94a3b8;
 }
 
 /* --- Milestone dots --- */
 
 .milestone-dot-current {
-  background-color: #f5a524;
-  box-shadow: 0 0 0 3px rgba(245, 165, 36, 0.2);
+  background-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
   animation: pulseDot 2.4s ease-in-out infinite;
 }
 
 .milestone-dot-past {
-  border: 2px solid #6b7080;
+  border: 2px solid #64748b;
   background-color: transparent;
 }
 
 .dark .milestone-dot-past {
-  border-color: #9298a6;
+  border-color: #94a3b8;
 }
 
 /* --- Hero glow --- */
@@ -257,18 +257,18 @@ button:focus-visible,
 .hero-glow {
   background: radial-gradient(
     60% 50% at 50% 0%,
-    rgba(109, 93, 246, 0.16) 0%,
-    rgba(76, 111, 255, 0.08) 45%,
-    rgba(247, 247, 249, 0) 80%
+    rgba(79, 70, 229, 0.14) 0%,
+    rgba(59, 130, 246, 0.08) 45%,
+    rgba(247, 250, 252, 0) 80%
   );
 }
 
 .dark .hero-glow {
   background: radial-gradient(
     60% 50% at 50% 0%,
-    rgba(109, 93, 246, 0.32) 0%,
-    rgba(76, 111, 255, 0.12) 45%,
-    rgba(9, 9, 11, 0) 80%
+    rgba(79, 70, 229, 0.3) 0%,
+    rgba(59, 130, 246, 0.12) 45%,
+    rgba(2, 6, 23, 0) 80%
   );
 }
 
@@ -371,10 +371,10 @@ button:focus-visible,
 @keyframes pulseDot {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.35);
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.35);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(245, 165, 36, 0);
+    box-shadow: 0 0 0 6px rgba(79, 70, 229, 0);
   }
 }
 

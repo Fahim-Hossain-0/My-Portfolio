@@ -1,10 +1,13 @@
+"use client";
+
 import { Server, LayoutGrid, ShieldCheck } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { services } from "@/lib/data";
 
 const icons = { server: Server, layout: LayoutGrid, shield: ShieldCheck };
-const iconColors = { server: "text-accent-blue", layout: "text-accent-amber", shield: "text-accent" };
+const iconColors = { server: "text-accent-blue bg-accent-blue/10 border-accent-blue/20", layout: "text-accent-violet bg-accent-violet/10 border-accent-violet/20", shield: "text-accent bg-accent/10 border-accent/20" };
 
 export default function Services() {
   return (
@@ -20,24 +23,25 @@ export default function Services() {
           {services.map((service, i) => {
             const Icon = icons[service.icon];
             return (
-              <Reveal key={service.title} delay={i * 0.08}>
-                <div
-                  className={`group h-full rounded-2xl border p-6 transition-all duration-300 ${
+              <Reveal key={service.title} delay={i * 0.08} className="h-full">
+                <SpotlightCard
+                  className={`h-full p-6 transition-all duration-300 ${
                     service.highlighted
-                      ? "border-accent-amber bg-surface shadow-[0_0_60px_-15px_rgba(245,165,36,0.4)] hover:shadow-[0_0_80px_-12px_rgba(245,165,36,0.5)]"
-                      : "card-surface hover:border-accent/30"
+                      ? "border-accent-violet/60 shadow-[0_0_60px_-15px_rgba(124,58,237,0.35)]"
+                      : "hover:border-accent/30"
                   }`}
+                  maxTilt={6}
                 >
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-xl bg-surface-2 transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-110 ${iconColors[service.icon]}`}
+                    className={`flex h-11 w-11 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${iconColors[service.icon]}`}
                   >
-                    <Icon size={18} />
+                    <Icon size={20} />
                   </div>
-                  <h3 className="mt-4 font-serif text-lg font-bold text-ink transition-colors duration-300 group-hover:text-accent">
+                  <h3 className="mt-5 text-xl font-bold tracking-tight text-ink transition-colors duration-300 group-hover:text-accent">
                     {service.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted">{service.description}</p>
-                </div>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted">{service.description}</p>
+                </SpotlightCard>
               </Reveal>
             );
           })}

@@ -1,13 +1,15 @@
 import { Suspense } from "react";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CursorGlow from "@/components/CursorGlow";
 import { siteConfig } from "@/lib/siteConfig";
 
-const inter = Inter({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: "variable",
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -93,14 +95,17 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} bg-bg text-ink antialiased`}>
+      <body className={`${sora.variable} bg-bg text-ink antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-bg"
         >
           Skip to content
         </a>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <CursorGlow />
+          {children}
+        </ThemeProvider>
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>

@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { projects } from "@/lib/data";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -74,16 +75,16 @@ export default function ProjectPage({ params }) {
 
         <Reveal delay={0.05} className="mt-8">
           <p className="eyebrow">— {project.category}</p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-5xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-5xl md:text-6xl leading-[1.12]">
             {project.title}
           </h1>
-          <p className="mt-4 max-w-2xl text-muted sm:text-lg">{project.summary}</p>
+          <p className="mt-4 max-w-2xl text-muted sm:text-lg leading-relaxed">{project.summary}</p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2.5">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-border px-3 py-1 text-xs text-muted"
+                className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold text-muted"
               >
                 {tag}
               </span>
@@ -96,7 +97,7 @@ export default function ProjectPage({ params }) {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-blue px-5 py-2.5 text-sm font-semibold text-white shadow-accent-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+                className="btn-shine flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-blue px-6 py-3 text-sm font-semibold text-white shadow-accent-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
               >
                 View live
                 <ArrowUpRight size={15} />
@@ -105,7 +106,7 @@ export default function ProjectPage({ params }) {
             {project.links.code && (
               <a
                 href={project.links.code}
-                className="group flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface-2 hover:shadow-soft"
+                className="group flex items-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface-2 hover:shadow-soft"
               >
                 <Github size={15} className="transition-transform duration-300 group-hover:scale-110" />
                 View code
@@ -114,86 +115,100 @@ export default function ProjectPage({ params }) {
           </div>
         </Reveal>
 
+        {/* Cinematic WebGL Shimmer Mockup Panel */}
         <Reveal delay={0.1}>
-          <div className="relative mt-12 flex h-64 items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface-2 sm:h-96">
+          <div className="relative mt-12 flex h-64 items-center justify-center overflow-hidden rounded-2xl border border-border bg-surface-2 sm:h-96 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.4)]">
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent-blue/10"
+              className="absolute inset-0 bg-gradient-to-br from-accent/15 via-transparent to-accent-blue/15"
             />
             <div
               aria-hidden="true"
               className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%]"
             />
-            <p className="relative text-lg font-medium text-muted">{project.title} preview</p>
+            <p className="relative text-xl font-bold tracking-tight text-ink font-mono uppercase bg-surface/50 backdrop-blur-md border border-border px-5 py-2.5 rounded-xl shadow-xs">
+              {project.title} Preview
+            </p>
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-[1fr_260px]">
+        <div className="mt-14 grid gap-10 sm:grid-cols-[1fr_280px]">
           <div className="space-y-10">
             <Reveal>
-              <h2 className="text-lg font-semibold text-ink">Overview</h2>
-              <p className="mt-3 text-muted">{project.overview}</p>
+              <h2 className="text-xl font-bold tracking-tight text-ink">Overview</h2>
+              <p className="mt-3.5 text-muted leading-relaxed text-base">{project.overview}</p>
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h2 className="text-lg font-semibold text-ink">The problem</h2>
-              <p className="mt-3 text-muted">{project.problem}</p>
+              <h2 className="text-xl font-bold tracking-tight text-ink">The problem</h2>
+              <p className="mt-3.5 text-muted leading-relaxed text-base">{project.problem}</p>
             </Reveal>
 
             <Reveal delay={0.1}>
-              <h2 className="text-lg font-semibold text-ink">My role</h2>
-              <p className="mt-3 text-muted">{project.role}</p>
+              <h2 className="text-xl font-bold tracking-tight text-ink">My role</h2>
+              <p className="mt-3.5 text-muted leading-relaxed text-base">{project.role}</p>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <h2 className="text-lg font-semibold text-ink">Key features</h2>
-              <ul className="mt-3 space-y-2">
+              <h2 className="text-xl font-bold tracking-tight text-ink">Key features</h2>
+              <ul className="mt-3.5 space-y-3.5">
                 {project.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-muted">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    {f}
+                  <li key={f} className="flex items-start gap-3 text-muted leading-relaxed text-base">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent animate-pulse" />
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="h-fit space-y-6 rounded-2xl border border-border bg-surface p-6 shadow-soft">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted">Year</p>
-              <p className="mt-1 text-sm text-ink">{project.year}</p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted">Stack</p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {project.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-md border border-border bg-surface-2 px-2 py-1 text-xs text-ink"
-                  >
-                    {s}
-                  </span>
-                ))}
+          <Reveal delay={0.1} className="h-fit">
+            <SpotlightCard className="p-6 transition-all duration-300 hover:border-accent/30 shadow-soft" maxTilt={3}>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted">Year</p>
+                  <p className="mt-1.5 text-base font-bold text-ink">{project.year}</p>
+                </div>
+                <div className="border-t border-border pt-5">
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted">Stack</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-lg border border-border bg-surface-2 px-2.5 py-1 text-xs font-semibold text-ink"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            </SpotlightCard>
           </Reveal>
         </div>
 
-        <Reveal delay={0.1} className="mt-20 border-t border-border pt-10">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+        {/* Next Project Spotlight Showcase Navigation */}
+        <Reveal delay={0.1} className="mt-20 border-t border-border pt-12">
+          <p className="text-xs font-bold uppercase tracking-widest text-muted">
             Next project
           </p>
           <Link
             href={`/projects/${next.slug}`}
-            className="group mt-3 flex items-center justify-between gap-4 rounded-2xl border border-border p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-surface-2 hover:shadow-accent-sm"
+            className="group mt-4 block"
           >
-            <span className="text-xl font-semibold text-ink transition-colors duration-300 group-hover:text-accent">
-              {next.title}
-            </span>
-            <ArrowUpRight
-              size={18}
-              className="text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
-            />
+            <SpotlightCard className="p-6 transition-all duration-300 hover:border-accent/40" maxTilt={2}>
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-xl font-bold tracking-tight text-ink transition-colors duration-300 group-hover:text-accent">
+                  {next.title}
+                </span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-all duration-300 group-hover:scale-110 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-accent-blue group-hover:text-white group-hover:shadow-accent-sm">
+                  <ArrowUpRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </span>
+              </div>
+            </SpotlightCard>
           </Link>
         </Reveal>
       </main>

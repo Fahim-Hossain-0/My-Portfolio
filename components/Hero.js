@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, animate } from "framer-motion";
 import { ArrowRight, Download, Clock, Rocket, Code2, Heart } from "lucide-react";
 import { stats } from "@/lib/data";
+import Hero3DCanvas from "@/components/Hero3DCanvas";
+import MagneticButton from "@/components/MagneticButton";
+import SpotlightCard from "@/components/SpotlightCard";
 
 const container = {
   hidden: {},
@@ -13,8 +16,8 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.21, 0.47, 0.32, 0.98] } },
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] } },
 };
 
 function CountUp({ raw }) {
@@ -43,100 +46,93 @@ function CountUp({ raw }) {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-40 pb-24">
-      <div className="hero-glow pointer-events-none absolute inset-x-0 top-0 h-[560px]" aria-hidden="true" />
-      <div className="bg-grid pointer-events-none absolute inset-x-0 top-0 h-[620px] opacity-70" aria-hidden="true" />
+      {/* Three.js Interactive 3D WebGL Scene Background */}
+      <Hero3DCanvas />
 
-      <motion.div
-        aria-hidden="true"
-        animate={{ y: [0, -18, 0] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute left-[6%] top-32 h-40 w-40 rounded-full bg-accent/15 blur-3xl dark:bg-accent/20"
-      />
-      <motion.div
-        aria-hidden="true"
-        animate={{ y: [0, 16, 0] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-        className="pointer-events-none absolute right-[8%] top-48 h-44 w-44 rounded-full bg-accent-blue/15 blur-3xl dark:bg-accent-blue/20"
-      />
-      <motion.div
-        aria-hidden="true"
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-        className="pointer-events-none absolute bottom-16 right-[22%] hidden h-32 w-32 rounded-full bg-accent-green/10 blur-3xl dark:bg-accent-green/15 lg:block"
-      />
+      {/* Layered Lighting & Grid Background */}
+      <div className="hero-glow pointer-events-none absolute inset-x-0 top-0 h-[580px]" aria-hidden="true" />
+      <div className="bg-grid pointer-events-none absolute inset-x-0 top-0 h-[640px] opacity-60" aria-hidden="true" />
 
+      {/* Hero Motion Container */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative mx-auto flex max-w-content flex-col items-center px-4 text-center"
+        className="relative z-10 mx-auto flex max-w-content flex-col items-center px-4 text-center"
       >
+        {/* Availability Badge */}
         <motion.div
           variants={item}
-          className="mb-6 flex items-center gap-2 rounded-full border border-border bg-surface/80 px-4 py-1.5 text-sm text-muted backdrop-blur-sm"
+          className="mb-6 flex items-center gap-2.5 rounded-full border border-border bg-surface/80 px-4.5 py-1.5 text-sm font-medium text-muted backdrop-blur-md shadow-sm"
         >
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-green opacity-75" aria-hidden="true" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent-green" aria-hidden="true" />
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-cyan opacity-75" aria-hidden="true" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-cyan" aria-hidden="true" />
           </span>
           Available for new projects
         </motion.div>
 
+        {/* Hero Headline */}
         <motion.h1
           variants={item}
-          className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl"
+          className="max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Full-stack developer building{" "}
           <span className="text-gradient">fast, precise</span> web products
         </motion.h1>
 
-        <motion.p variants={item} className="mt-6 max-w-xl text-balance text-muted sm:text-lg">
+        {/* Hero Subtitle */}
+        <motion.p variants={item} className="mt-6 max-w-xl text-balance text-muted sm:text-lg leading-relaxed">
           I design and build web applications end-to-end — from interface to
           database — with React, Next.js and Node.js. Clean systems,
           considered detail.
         </motion.p>
 
-        <motion.div variants={item} className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
+        {/* Hero Magnetic Action CTAs */}
+        <motion.div variants={item} className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <MagneticButton
             href="#work"
-            className="group btn-shine flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-blue px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+            className="group btn-shine flex items-center gap-2 rounded-full bg-gradient-to-r from-accent via-accent-blue to-accent-violet px-7 py-3.5 text-sm font-semibold text-white shadow-glow transition-all duration-300 hover:shadow-lift"
           >
             View my work
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
-          <a
+          </MagneticButton>
+
+          <MagneticButton
             href="/resume.pdf"
-            className="group flex items-center gap-2 rounded-full border border-accent/20 bg-surface px-6 py-3 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/5 hover:shadow-accent-sm"
+            className="group flex items-center gap-2 rounded-full border border-border bg-surface/90 px-7 py-3.5 text-sm font-semibold text-ink backdrop-blur-md transition-all duration-300 hover:border-accent/40 hover:bg-surface-2 hover:shadow-soft"
           >
-            <Download size={16} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+            <Download size={16} className="text-accent transition-transform duration-300 group-hover:translate-y-0.5" />
             Download resume
-          </a>
+          </MagneticButton>
         </motion.div>
 
+        {/* Hero Interactive Spotlight Stat Cards */}
         <motion.div
           variants={item}
-          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4"
+          className="mt-16 grid w-full max-w-3xl grid-cols-2 gap-3.5 sm:grid-cols-4"
         >
           {[
             { raw: stats[0].value, icon: Clock, label: stats[0].label, bg: "bg-accent-blue/10", color: "text-accent-blue" },
-            { raw: stats[1].value, icon: Rocket, label: stats[1].label, bg: "bg-accent-green/10", color: "text-accent-green" },
+            { raw: stats[1].value, icon: Rocket, label: stats[1].label, bg: "bg-accent-cyan/10", color: "text-accent-cyan" },
             { raw: stats[2].value, icon: Code2, label: stats[2].label, bg: "bg-accent/10", color: "text-accent" },
-            { raw: stats[3].value, icon: Heart, label: stats[3].label, bg: "bg-accent-amber/10", color: "text-accent-amber" },
+            { raw: stats[3].value, icon: Heart, label: stats[3].label, bg: "bg-accent-violet/10", color: "text-accent-violet" },
           ].map((s) => (
-            <div
+            <SpotlightCard
               key={s.label}
-              className="card-surface group rounded-2xl p-4 text-left transition-all duration-300 hover:border-accent/30 hover:shadow-[0_12px_32px_-12px_rgba(109,93,246,0.25)]"
+              className="p-4 text-left transition-all duration-300 hover:border-accent/30"
+              maxTilt={8}
             >
               <div
-                className={`mb-3 flex h-8 w-8 items-center justify-center rounded-lg transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${s.bg} ${s.color}`}
+                className={`mb-3 flex h-8.5 w-8.5 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${s.bg} ${s.color}`}
               >
-                <s.icon size={15} />
+                <s.icon size={16} />
               </div>
-              <p className="text-xl font-bold text-ink">
+              <p className="text-xl font-bold tracking-tight text-ink">
                 <CountUp raw={s.raw} />
               </p>
-              <p className="mt-0.5 text-xs text-muted">{s.label}</p>
-            </div>
+              <p className="mt-0.5 text-xs text-muted font-medium">{s.label}</p>
+            </SpotlightCard>
           ))}
         </motion.div>
       </motion.div>

@@ -16,10 +16,10 @@ module.exports = {
         ink: "var(--ink)",
         muted: "var(--muted)",
         accent: {
-          DEFAULT: "#6D5DF6",
-          blue: "#4C6FFF",
-          green: "#3DD68C",
-          amber: "#F5A524",
+          DEFAULT: "#4F46E5",
+          blue: "#3B82F6",
+          violet: "#7C3AED",
+          cyan: "#06B6D4",
         },
       },
       fontFamily: {
@@ -38,10 +38,10 @@ module.exports = {
       },
       boxShadow: {
         card: "0 1px 0 0 rgba(255,255,255,0.03) inset",
-        glow: "0 0 80px 0 rgba(109, 93, 246, 0.25)",
-        "accent-sm": "0 2px 12px -2px rgba(109, 93, 246, 0.25)",
-        lift: "0 16px 40px -16px rgba(109, 93, 246, 0.35)",
-        soft: "0 2px 20px -4px rgba(10, 10, 15, 0.08)",
+        glow: "0 0 80px 0 rgba(79, 70, 229, 0.22)",
+        "accent-sm": "0 2px 12px -2px rgba(79, 70, 229, 0.25)",
+        lift: "0 16px 40px -16px rgba(79, 70, 229, 0.35)",
+        soft: "0 2px 20px -4px rgba(15, 23, 42, 0.08)",
       },
       keyframes: {
         pulseSlow: {
